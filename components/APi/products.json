@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.postimg.cc/1Xn04NtC/image.png",
+    "title": "Шопперы",
+    "describtion": "Lorem ipsum del amort"
+  },
+  {
+    "id": 2,
+    "img": "https://i.postimg.cc/ZndpwX1Y/image.png",
+    "title": "Толстовки",
+    "describtion": "Lorem ipsum del amort"
+  },
+  {
+    "id": 3,
+    "img": "https://i.postimg.cc/ydKM6zyt/image.png",
+    "title": "Футболки",
+    "describtion": "Lorem ipsum del amort"
+  },
+  {
+    "id": 4,
+    "img": "https://i.postimg.cc/CLZSQSPs/image.png",
+    "title": "Кепки",
+    "describtion": "Lorem ipsum del amort"
+  },
+  {
+    "id": 5,
+    "img": "https://i.postimg.cc/sx7KMBfJ/image.png",
+    "title": "Канцтовары",
+    "describtion": "Lorem ipsum del amort"
+  },
+  {
+    "id": 6,
+    "img": "https://i.postimg.cc/d1JfPjqK/image.png",
+    "title": "Флаги",
+    "describtion": "Lorem ipsum del amort"
+  },
+  {
+    "id": 7,
+    "img": "https://i.postimg.cc/mZt8xdPm/image.png",
+    "title": "Рубашки",
+    "describtion": "Lorem ipsum del amort"
+  },
+  {
+    "id": 8,
+    "img": "https://i.postimg.cc/N0kmvtx3/image.png",
+    "title": "Подушки",
+    "describtion": "Lorem ipsum del amort"
+  }
+]

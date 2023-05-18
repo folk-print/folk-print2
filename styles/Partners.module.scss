@@ -1,0 +1,30 @@
+.main{
+        .container{
+            @apply w-[70%] mx-auto pb-20;
+        }
+
+        h1{
+            @apply text-5xl font-semibold text-center py-10;
+        }
+
+        .content{
+            @apply flex items-center grid grid-cols-5 gap-3;
+        }
+
+        .image{
+            @apply w-full;
+        }
+}
+
+/*mobile*/
+
+@media (max-width: 575.98px){
+.main{
+    h1{
+        @apply text-3xl;
+    }
+    .content{
+        @apply grid grid-cols-2 gap-3;
+     }
+    }
+}

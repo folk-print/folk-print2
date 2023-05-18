@@ -1,0 +1,50 @@
+.content {
+  .container {
+    @apply w-[70%] mx-auto relative;
+  }
+
+  .heading {
+    @apply text-center font-semibold text-5xl py-10 leading-tight;
+  }
+
+  .main {
+    @apply flex items-center justify-center pt-10 pb-14;
+
+    .box {
+      @apply bg-yellow-400 rounded-lg mx-5 w-[300px] h-[300px] p-7;
+      &:hover {
+        @apply bg-black text-yellow-400 scale-110 duration-200;
+      }
+
+      .icon {
+        @apply w-20 h-20 mx-auto;
+      }
+
+      h1 {
+        @apply text-3xl text-center my-3;
+      }
+
+      p {
+        @apply text-sm font-semibold text-center;
+      }
+    }
+  }
+}
+
+/*mobile*/
+@media (max-width: 575.98px) {
+  .main {
+    @apply flex flex-col space-y-5;
+  }
+}
+
+/*tablet*/
+@media only screen and (min-width: 576px) and (max-width:992px){
+  .main{
+    @apply flex flex-wrap space-y-7;
+
+    .box{
+      @apply flex-[25%] max-w-[50%];
+    }
+  }
+}

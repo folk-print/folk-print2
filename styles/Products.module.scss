@@ -1,0 +1,71 @@
+.main {
+  @apply relative pb-10;
+  background-image: url("https://media.istockphoto.com/photos/blank-front-real-black-chalkboard-background-texture-in-college-for-picture-id1201544779?b=1&k=20&m=1201544779&s=612x612&w=0&h=y6mp3OxUmB_Mh4QavW99g7NrUJqR7F05v8uBQ2_TqdI=");
+  .cardsContent {
+    @apply grid grid-cols-4 gap-10 p-14;
+  }
+  .card {
+    @apply flex flex-col w-[250px] hover:cursor-pointer hover:shadow-lg hover:shadow-slate-800  bg-black rounded-b-md rounded-t-md;
+    .text {
+      @apply py-5 px-5 font-semibold text-white flex justify-center text-center leading-5;
+      h1 {
+        @apply text-2xl;
+      }
+      p {
+        @apply text-base font-medium;
+      }
+    }
+    .imgDiv {
+      @apply object-cover;
+    }
+    .cardImg {
+      @apply w-full h-full rounded-t-md  w-[250px] h-[210px];
+    }
+  }
+  .socialIcon {
+    @apply flex justify-center mt-10 space-x-8 text-black;
+  }
+  .socialIcon * {
+    @apply h-12 w-12 cursor-pointer active:scale-95 duration-200;
+  }
+  .socialIcon div:nth-child(1) {
+    &:hover {
+      @apply text-blue-500;
+    }
+  }
+
+  .socialIcon div:nth-child(2) {
+    &:hover {
+      @apply text-blue-700;
+    }
+  }
+
+  .socialIcon div:nth-child(3) {
+    &:hover {
+      @apply text-red-500;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .main {
+    .card {
+      @apply flex flex-col justify-center items-center  w-[300px] hover:cursor-pointer hover:shadow-lg hover:shadow-slate-800  bg-black rounded-b-md ml-5;
+      .text {
+        @apply py-5 px-5 font-semibold text-center;
+        h1 {
+          @apply text-2xl;
+        }
+      }
+      .imgDiv {
+        @apply w-[300px] h-[230px];
+      }
+      .cardImg {
+        @apply w-full h-full rounded-t-md;
+      }
+    }
+    .cardsContent {
+      @apply grid grid-cols-1 gap-y-10 p-7 py-14;
+    }
+  }
+}

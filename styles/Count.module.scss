@@ -1,0 +1,90 @@
+.main {
+  @apply bg-black w-full py-10;
+
+  .container {
+    @apply w-[70%] mx-auto text-yellow-300 text-center font-semibold;
+
+    p {
+      width: 400px;
+      margin: 0 10px 0 0;
+      white-space: pre-line;
+      color: #c0c3d7;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .content {
+      @apply text-white flex items-center justify-around py-3;
+
+      .box {
+        @apply flex flex-col items-center gap-2;
+      }
+
+      .boxTwo {
+        @apply hidden;
+       
+      }
+    }
+    .underContent {
+      @apply flex justify-center mt-8;
+      .box {
+        @apply flex flex-col items-center gap-2;
+      }
+    }
+  }
+}
+
+/*mobile*/
+@media (max-width: 575.98px) {
+    .main {
+        @apply bg-black w-full py-10;
+      
+        .container {
+          @apply w-[70%] mx-auto text-yellow-300 text-center font-semibold;
+      
+          p {
+            width: 400px;
+            margin: 0 10px 0 0;
+            white-space: pre-line;
+            color: #c0c3d7;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 4px;
+          }
+      
+          .content {
+            @apply flex flex-col gap-10;
+        
+            .box {
+              @apply flex flex-col items-center gap-2;
+              p {
+                width: 300px;
+                margin: 0 10px 0 0;
+                white-space: pre-line;
+                color: #c0c3d7;
+                font-weight: 400;
+                line-height: 1.5;
+                margin-bottom: 4px;
+              }
+            }
+            .boxTwo {
+              @apply flex flex-col items-center gap-2;
+              p {
+                width: 300px;
+                margin: 0 10px 0 0;
+                white-space: pre-line;
+                color: #c0c3d7;
+                font-weight: 400;
+                line-height: 1.5;
+                margin-bottom: 4px;
+              }
+            }
+          }
+          .underContent {
+            @apply hidden;
+            
+          }
+        }
+      }
+}

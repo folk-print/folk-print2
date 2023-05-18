@@ -1,0 +1,102 @@
+.footer {
+  @apply bg-black p-5;
+
+  .container {
+    @apply w-[95%] mx-auto flex justify-between items-center px-10 ;
+  }
+
+  .content {
+    @apply flex items-center justify-between gap-20;
+
+    .logo {
+      @apply flex items-center justify-center flex-col space-y-5;
+
+      h1 {
+        @apply text-3xl font-bold text-yellow-400;
+      }
+
+      .socialIcons {
+        @apply flex items-center justify-between gap-5 mt-2 text-gray-300;
+      }
+
+      .socialIcons * {
+        @apply h-10 w-10 cursor-pointer active:scale-95 duration-100 mt-2;
+      }
+
+      .socialIcons div:nth-child(1) {
+        &:hover {
+          @apply text-blue-500;
+        }
+      }
+
+      .socialIcons div:nth-child(2) {
+        &:hover {
+          @apply text-blue-700;
+        }
+      }
+
+      .socialIcons div:nth-child(3) {
+        &:hover {
+          @apply text-red-500;
+        }
+      }
+    }
+
+    .address {
+      @apply flex flex-col text-center;
+
+      p {
+        @apply w-3/5 mx-auto text-white;
+      }
+
+      a {
+        @apply underline font-semibold mt-2 text-yellow-400;
+
+        &:hover {
+          @apply text-yellow-500;
+        }
+      }
+    }
+
+    .contact {
+      @apply space-y-2;
+      h1 {
+        @apply text-gray-500 text-xl;
+      }
+
+      span {
+        @apply text-yellow-500 font-semibold text-xl;
+      }
+    }
+    
+  }
+
+  
+}
+
+/*mobile*/
+@media (max-width: 575.98px) {
+  .container{
+    @apply px-8 pb-5 ;
+  }
+  .content {
+    @apply flex flex-col py-5;
+  }
+  .address {
+    @apply flex flex-col text-center ;
+
+    p {
+      @apply w-4/5 mx-auto text-white leading-8;
+      font-size: 18px
+    }
+
+    a {
+      @apply underline font-semibold mt-2 text-yellow-400;
+
+      &:hover {
+        @apply text-yellow-500;
+      }
+    }
+  }
+  
+}
