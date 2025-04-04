@@ -20,7 +20,7 @@ function Footer() {
                     <FaTelegram className="w-10 h-10 cursor-pointer active:scale-95 duration-200" />
                   </a>
                 </div>
-                
+
                 <div>
                   <a href="https://www.instagram.com/folkprint.b2b/">
                     <FaInstagram className="w-10 h-10 cursor-pointer active:scale-95 duration-200" />
@@ -30,15 +30,20 @@ function Footer() {
             </div>
             <div className={styles.address}>
               <p>
-                Адрес: г.Ташкент, Чиланзарский р-н, Квартал 1, дом 59
+                Адрес: г.Ташкент, Учтепинский район, массив Чиланзар, 11-й
+                квартал, 51/1
               </p>
               <a href="#map">Показать на карте</a>
             </div>
             <div className={styles.contact}>
               <h1>
-                Наш номер:
+                Наши номера: <br/>
                 <span>
                   <a href="tel:+998993333073">+998 99 333 30 73</a>
+                </span>
+                <br/>
+                <span>
+                  <a href="tel:+998993333073">+998 95 787 77 55</a>
                 </span>
               </h1>
               <h1>

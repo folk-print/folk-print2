@@ -4,7 +4,7 @@ function Iframe() {
         <div className={styles.main} id="location">
             <div id="map" className={styles.container}>
                 <h1>Наша локация</h1>
-                <iframe className={styles.img} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5996.207078635381!2d69.225859!3d41.284851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa239564c42efca7a!2zNDHCsDE3JzA1LjUiTiA2OcKwMTMnMzMuMSJF!5e0!3m2!1sru!2s!4v1663390611616!5m2!1sru!2s" width="600" height="450" style={{ border: '0' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <iframe className={styles.img} src="https://yandex.ru/map-widget/v1/?um=constructor%3Aea8ab171310c7a0ded42c8feca2454baf4b9a20944786bf949feeb20dd71ad46&amp;source=constructor" width="600" height="450" style={{ border: '0' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     )
