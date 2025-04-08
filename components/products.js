@@ -1,81 +1,147 @@
-import styles from "../styles/Products.module.scss";
-import productsJson from "./APi/products.json";
-import { FaTelegram, FaFacebook, FaInstagram } from "react-icons/fa";
-import { BsXLg } from "react-icons/bs";
-import { useState } from "react";
-function Products() {
-  const [open, setOpen] = useState(false);
-  const products = productsJson.map((product) => (
-    <div key={product.id} className={styles.card}>
-      <div className={styles.imgDiv}>
-        <img src={product.img} className={styles.cardImg} alt="product-img" />
-      </div>
-      <div className={styles.text}>
-        <h1>{product.title}</h1>
-        {/* <p>{product.describtion}</p> */}
-      </div>
-    </div>
-  ));
-  function openVisitCard() {
-    open ? setOpen(false) : setOpen(true);
-  }
-  return (
-    <>
-      <div className={styles.main} id="portfolio">
-        <div className={styles.cardsContent}>{products}</div>
-        <div
-          style={{ display: open ? "block" : "none" }}
-          className="secondVisitCard flex flex-col items-center justify-center bg-white w-full h-[500px] absolute bottom-0 animate__animated animate__fadeInUp my-auto p-8"
-        >
-          <div className="flex justify-end">
-            <BsXLg
-              onClick={openVisitCard}
-              style={{ display: open ? true : false }}
-              className="h-8 w-8 mb-3  text-black hover:cursor-pointer active:scale-95 duration-200 "
-            />
-          </div>
-          <div className="flex justify-center">
-            <h1 className="font-bold text-4xl text-center">
-              Какое способ вам удобнее?
-            </h1>
-          </div>
-          <div className={styles.socialIcon}>
-            <div>
-              <a href="https://t.me/folkprint_b2b">
-                <FaTelegram className="w-10 h-10 cursor-pointer active:scale-95 duration-200" />
-              </a>
-            </div>
-            <div>
-              <a href="https://www.instagram.com/folkprint.b2b/">
-                <FaInstagram className="w-10 h-10 cursor-pointer active:scale-95 duration-200" />
-              </a>
-            </div>
-          </div>
-          <div className="space-y-8 mt-5 md:mt-10 lg:mt-14">
-            <a href="tel:+998993333073">
-              <h2 className="hover:underline hover:cursor-pointer active:sclae-95 text-black text-center text-[30px] md:text-4xl lg:text-4xl font-bold mb-4">
-              +998 99 333 30 73
-              </h2>
-            </a>
-            <a href="mailto:folkprint@gmail.com">
-              <h2 className="hover:underline hover:cursor-pointer active:sclae-95 text-black text-center text-[28px] md:text-4xl lg:text-4xl font-bold">
-                folkprint@gmail.com
-              </h2>
-            </a>
-          </div>
-        </div>
-        <div className="flex justify-center items-center h-14   mx-auto py-10 ">
-          <button
-            className="w-[200px] mx-auto bg-yellow-400 py-3.5 px-5.5 text-white font-bold rounded-md uppercase"
-            onClick={openVisitCard}
-            type="submit"
-          >
-            Заказать сейчас
-          </button>
-        </div>
-      </div>
-    </>
-  );
-}
+"use client"
 
-export default Products;
+import { useState, useEffect } from "react"
+import { FaTelegram, FaInstagram, FaPhoneAlt } from "react-icons/fa"
+import { X } from "lucide-react"
+import productsJson from "./APi/products.json"
+
+export default function Products() {
+  const [open, setOpen] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  // Track window width for responsive adjustments
+  useEffect(() => {
+    // Set initial width
+    setWindowWidth(window.innerWidth)
+
+    // Update width on resize
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  function toggleVisitCard() {
+    setOpen(!open)
+    // Prevent scrolling when modal is open
+    if (!open) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+  }
+
+  // Determine icon size based on screen width
+  const getIconSize = () => {
+    if (windowWidth < 640) return "w-16 h-16" // Mobile
+    if (windowWidth < 1024) return "w-16 h-16" // Tablet
+    return "w-12 h-12" // Desktop
+  }
+
+  // Determine text size based on screen width
+  const getTextSize = () => {
+    if (windowWidth < 640) return "text-xl" // Mobile
+    if (windowWidth < 1024) return "text-2xl" // Tablet
+    return "text-3xl" // Desktop
+  }
+
+  return (
+    <div
+      className="relative pb-16"
+      id="portfolio"
+      style={{
+        backgroundImage:
+          "url('https://media.istockphoto.com/photos/blank-front-real-black-chalkboard-background-texture-in-college-for-picture-id1201544779?b=1&k=20&m=1201544779&s=612x612&w=0&h=y6mp3OxUmB_Mh4QavW99g7NrUJqR7F05v8uBQ2_TqdI=')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Product Grid */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+          {productsJson.map((product) => (
+            <div
+              key={product.id}
+              className="bg-black rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:shadow-slate-800 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div className="aspect-[6/5] overflow-hidden">
+                <img
+                  src={product.img || "/placeholder.svg"}
+                  alt={product.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-5">
+                <h2 className="text-white text-xl md:text-2xl font-semibold text-center">{product.title}</h2>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Order Button - Matching the header component style */}
+      <div className="flex justify-center mt-4 mb-10">
+        <button
+          onClick={toggleVisitCard}
+          className="bg-yellow-400 py-3 px-8 rounded-full text-lg font-semibold hover:bg-yellow-300 active:scale-95 duration-200 shadow-lg"
+        >
+          Заказать сейчас
+        </button>
+      </div>
+
+      {/* Contact Modal - Fixed positioning for consistent display across devices */}
+      {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="bg-white w-full max-w-md rounded-xl p-6 animate-slideUp">
+            <div className="flex justify-end mb-2">
+              <button
+                onClick={toggleVisitCard}
+                className="text-black hover:text-gray-700 active:scale-95 transition-all duration-200"
+              >
+                <X className="h-8 w-8" />
+              </button>
+            </div>
+
+            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-6">Какое способ вам удобнее?</h1>
+
+            {/* Social Icons - Responsive sizes */}
+            <div className="flex justify-center space-x-8 my-6">
+              <a
+                href="https://t.me/folkprint_b2b"
+                className="text-black hover:text-blue-500 transition-colors duration-200"
+              >
+                <FaTelegram className={getIconSize()} />
+              </a>
+              <a
+                href="https://www.instagram.com/folkprint.b2b/"
+                className="text-black hover:text-pink-600 transition-colors duration-200"
+              >
+                <FaInstagram className={getIconSize()} />
+              </a>
+            </div>
+
+            {/* Phone Numbers - Matching header style */}
+            <div className="space-y-4 mt-6">
+              <a
+                href="tel:+998993333073"
+                className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
+              >
+                <FaPhoneAlt className="mr-2 h-4 w-4" />
+                <span className={`font-bold ${getTextSize()}`}>+998 99 333 30 73</span>
+              </a>
+              <a
+                href="tel:+998957877755"
+                className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
+              >
+                <FaPhoneAlt className="mr-2 h-4 w-4" />
+                <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
