@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { FaTelegram, FaInstagram, FaPhoneAlt } from "react-icons/fa"
-import { X } from 'lucide-react'
+import { X } from "lucide-react"
 
 function Header() {
-  const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showContactModal, setShowContactModal] = useState(false)
 
   // Handle scroll event to change navbar background
@@ -24,8 +24,13 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  function toggleMenu() {
-    setOpen(!open)
+  function toggleMobileMenu() {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "auto"
+    } else {
+      document.body.style.overflow = "hidden"
+    }
+    setMobileMenuOpen(!mobileMenuOpen)
     setScrolled(true)
   }
 
@@ -35,7 +40,7 @@ function Header() {
 
   // Helper functions for responsive sizing
   function getIconSize() {
-    return "w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
+    return "w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12"
   }
 
   function getTextSize() {
@@ -44,7 +49,6 @@ function Header() {
 
   return (
     <>
-      {/* Desktop Header */}
       <header className="relative w-full h-screen">
         {/* Background Image */}
         <img
@@ -53,9 +57,9 @@ function Header() {
           className="w-full h-screen object-cover object-top"
         />
         <div className="absolute z-10 inset-0 bg-gray-900 bg-opacity-75">
-          {/* Navbar - Fixed on scroll */}
+          {/* DESKTOP HEADER - Always visible, but styled differently based on screen size */}
           <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
               scrolled ? "bg-black py-2" : "bg-transparent py-6"
             }`}
           >
@@ -71,60 +75,73 @@ function Header() {
                 }`}
               />
 
-              {/* Navigation Links - Desktop */}
-              <div className="hidden md:flex items-center space-x-5 lg:space-x-8">
+              {/* Navigation Links - Desktop Only */}
+              <div className="nav-links-container items-center space-x-8">
                 <Link href="#portfolio" className="text-white hover:text-yellow-400 transition-colors cursor-pointer">
-                  <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-sm lg:text-base cursor-pointer">
+                  <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-base cursor-pointer">
                     Каталог
                   </div>
                 </Link>
                 <Link href="#partners" className="text-white hover:text-yellow-400 transition-colors cursor-pointer">
-                  <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-sm lg:text-base">
+                  <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-base cursor-pointer">
                     Партнеры
                   </div>
                 </Link>
-                <Link href="#about" className="text-white hover:text-yellow-400 transition-colors">
-                  <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-sm lg:text-base">
+                <Link href="#about" className="text-white hover:text-yellow-400 transition-colors cursor-pointer">
+                  <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-base cursor-pointer">
                     О Нас
                   </div>
                 </Link>
               </div>
 
-              {/* Social Icons and Phone */}
+              {/* Right Side Content */}
               <div className="flex items-center space-x-4 lg:space-x-7">
-                {/* Social Icons */}
-                <div className="hidden sm:flex items-center space-x-3 md:space-x-4">
+                {/* Social Icons - Desktop Only */}
+                <div className="social-icons-desktop items-center space-x-4">
                   <a href="https://t.me/folkprint_b2b" className="text-gray-200 hover:text-blue-500 transition-colors">
-                    <FaTelegram className="w-6 h-6 md:w-8 md:h-8 cursor-pointer active:scale-95 duration-200" />
+                    <FaTelegram className="w-8 h-8 cursor-pointer active:scale-95 duration-200" />
                   </a>
                   <a
                     href="https://www.instagram.com/folkprint.b2b/"
                     className="text-gray-200 hover:text-blue-700 transition-colors"
                   >
-                    <FaInstagram className="w-6 h-6 md:w-8 md:h-8 cursor-pointer active:scale-95 duration-200" />
+                    <FaInstagram className="w-8 h-8 cursor-pointer active:scale-95 duration-200" />
                   </a>
                 </div>
 
-                {/* Phone Numbers - Desktop */}
-                <div className="hidden md:block">
-                  <div className="flex flex-col space-y-1 sm:space-y-2">
+                {/* Social Icons - Tablet Only */}
+                <div className="social-icons-tablet items-center space-x-3">
+                  <a href="https://t.me/folkprint_b2b" className="text-gray-200 hover:text-blue-500 transition-colors">
+                    <FaTelegram className="w-6 h-6 cursor-pointer active:scale-95 duration-200" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/folkprint.b2b/"
+                    className="text-gray-200 hover:text-blue-700 transition-colors"
+                  >
+                    <FaInstagram className="w-6 h-6 cursor-pointer active:scale-95 duration-200" />
+                  </a>
+                </div>
+
+                {/* Phone Numbers - Desktop Only */}
+                <div className="phone-numbers-desktop">
+                  <div className="flex flex-col space-y-2">
                     <a
-                      className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
+                      className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
                       href="tel:+998993333073"
                     >
-                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" /> +998 99 333 30 73
+                      <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 99 333 30 73
                     </a>
                     <a
-                      className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
+                      className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
                       href="tel:+998957877755"
                     >
-                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" /> +998 95 787 77 55
+                      <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 95 787 77 55
                     </a>
                   </div>
                 </div>
 
-                {/* Phone Button - Mobile */}
-                <div className="md:hidden">
+                {/* Phone Button - Mobile and Tablet */}
+                <div className="phone-button-mobile">
                   <a
                     className="bg-white rounded-full p-3 text-black flex items-center justify-center"
                     href="tel:+998993333073"
@@ -133,8 +150,8 @@ function Header() {
                   </a>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <button className="md:hidden text-white" onClick={toggleMenu}>
+                {/* Mobile Menu Button - Mobile and Tablet Only */}
+                <button className="mobile-menu-button text-white p-2" onClick={toggleMobileMenu}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -146,7 +163,7 @@ function Header() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                      d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
                     />
                   </svg>
                 </button>
@@ -154,13 +171,13 @@ function Header() {
             </div>
 
             {/* Mobile Menu */}
-            {open && (
-              <div className="md:hidden bg-black bg-opacity-95 h-screen  px-4 py-4 mt-4">
+            {mobileMenuOpen && (
+              <div className="mobile-menu bg-black bg-opacity-95 fixed top-[70px] left-0 right-0 bottom-0 overflow-y-auto px-4 py-4">
                 <div className="flex flex-col space-y-4">
                   <Link
                     href="#portfolio"
                     className="text-white hover:text-yellow-400 transition-colors"
-                    onClick={() => setOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-lg">
                       Каталог
@@ -169,7 +186,7 @@ function Header() {
                   <Link
                     href="#partners"
                     className="text-white hover:text-yellow-400 transition-colors"
-                    onClick={() => setOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-lg">
                       Партнеры
@@ -178,7 +195,7 @@ function Header() {
                   <Link
                     href="#about"
                     className="text-white hover:text-yellow-400 transition-colors"
-                    onClick={() => setOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-lg">
                       О Нас
@@ -292,6 +309,94 @@ function Header() {
           </div>
         </div>
       )}
+
+      {/* Add CSS for animation and responsive classes */}
+      <style jsx>{`
+        @keyframes slideUp {
+          from {
+            transform: translateY(50px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        .animate-slideUp {
+          animation: slideUp 0.3s ease-out forwards;
+        }
+        
+        /* Custom responsive classes */
+        .nav-links-container {
+          display: none;
+        }
+        
+        @media (min-width: 1024px) {
+          .nav-links-container {
+            display: flex;
+          }
+        }
+        
+        .social-icons-desktop {
+          display: none;
+        }
+        
+        @media (min-width: 1024px) {
+          .social-icons-desktop {
+            display: flex;
+          }
+        }
+        
+        .social-icons-tablet {
+          display: none;
+        }
+        
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .social-icons-tablet {
+            display: flex;
+          }
+        }
+        
+        .phone-numbers-desktop {
+          display: none;
+        }
+        
+        @media (min-width: 1024px) {
+          .phone-numbers-desktop {
+            display: block;
+          }
+        }
+        
+        .phone-button-mobile {
+          display: block;
+        }
+        
+        @media (min-width: 1024px) {
+          .phone-button-mobile {
+            display: none;
+          }
+        }
+        
+        .mobile-menu-button {
+          display: block;
+        }
+        
+        @media (min-width: 1024px) {
+          .mobile-menu-button {
+            display: none;
+          }
+        }
+        
+        .mobile-menu {
+          display: block;
+        }
+        
+        @media (min-width: 1024px) {
+          .mobile-menu {
+            display: none;
+          }
+        }
+      `}</style>
     </>
   )
 }

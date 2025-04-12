@@ -10,7 +10,8 @@ export default function Home() {
     <div>
       <Head>
         <title>Folk Print</title>
-        <meta name="Folk print" content="Фабрика принтов №1 в Узбекистане." />
+        <meta name="Folk print" content="Качественная корпоративная одежда с логотипом" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <link
           rel="icon"
           type="image/x-icon"

@@ -54,7 +54,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-10">
           {/* Image Card 1 - Blue Polo with Logo */}
           <div className="bg-yellow-400 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-black group">
-            <div className="h-48 overflow-hidden">
+            <div className="h-72 overflow-hidden">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Layer%204-gigapixel-standard%20v2-2x.png-WQSnhQOCNVfXtL99UQnVx81hYTfF04.jpeg"
                 alt="Корпоративная одежда с логотипом"
@@ -68,7 +68,7 @@ export default function About() {
 
           {/* Image Card 2 - Financial Document */}
           <div className="bg-yellow-400 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-black group">
-            <div className="h-48 overflow-hidden">
+            <div className="h-72 overflow-hidden">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Layer%202-gigapixel-low%20resolution-2x.png-RArEWLnwNDA8Z4GEGPCyMbIGHfp4Qc.jpeg"
                 alt="Финансовый документ"
@@ -84,7 +84,7 @@ export default function About() {
 
           {/* Image Card 3 - Black Shirt with Logo */}
           <div className="bg-yellow-400 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-black group">
-            <div className="h-48 overflow-hidden">
+            <div className="h-72 overflow-hidden">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Layer%203-gigapixel-low%20resolution-2x.png-MRft8gxWaW6rfqFbbU3thvGy4mEAAb.jpeg"
                 alt="Черная футболка с логотипом"
@@ -98,7 +98,7 @@ export default function About() {
 
           {/* Image Card 4 - Clothing Label */}
           <div className="bg-yellow-400 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-black group">
-            <div className="h-48 overflow-hidden">
+            <div className="h-72 overflow-hidden">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Layer%201-gigapixel-low%20resolution-2x.png-65u2o6uNKnY4Y8JgTOUgnJc5XOTyup.jpeg"
                 alt="Этикетка одежды"
