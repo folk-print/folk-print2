@@ -1,60 +1,61 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { FaTelegram, FaInstagram, FaPhoneAlt } from "react-icons/fa"
-import { X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { FaTelegram, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import { X } from "lucide-react";
 
 function Header() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [showContactModal, setShowContactModal] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
 
   // Handle scroll event to change navbar background
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   function toggleMobileMenu() {
     if (mobileMenuOpen) {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     } else {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     }
-    setMobileMenuOpen(!mobileMenuOpen)
+    setMobileMenuOpen(!mobileMenuOpen);
+    setScrolled(true);
   }
 
   function toggleVisitCard() {
-    setShowContactModal(!showContactModal)
+    setShowContactModal(!showContactModal);
   }
 
   // Helper functions for responsive sizing
   function getIconSize() {
-    return "w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12"
+    return "w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12";
   }
 
   function getTextSize() {
-    return "text-base sm:text-lg md:text-xl"
+    return "text-base sm:text-lg md:text-xl";
   }
 
   useEffect(() => {
-    console.log("Window width:", window.innerWidth)
+    console.log("Window width:", window.innerWidth);
     const handleResize = () => {
-      console.log("Resized width:", window.innerWidth)
-    }
+      console.log("Resized width:", window.innerWidth);
+    };
 
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -87,17 +88,26 @@ function Header() {
               {/* Navigation Links - Desktop Only */}
 
               <div className="nav-links-container items-center space-x-8">
-                <Link href="#portfolio" className="text-white hover:text-yellow-400 transition-colors cursor-pointer">
+                <Link
+                  href="#portfolio"
+                  className="text-white hover:text-yellow-400 transition-colors cursor-pointer"
+                >
                   <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-base cursor-pointer">
                     Каталог
                   </div>
                 </Link>
-                <Link href="#partners" className="text-white hover:text-yellow-400 transition-colors cursor-pointer">
+                <Link
+                  href="#partners"
+                  className="text-white hover:text-yellow-400 transition-colors cursor-pointer"
+                >
                   <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-base cursor-pointer">
                     Партнеры
                   </div>
                 </Link>
-                <Link href="#about" className="text-white hover:text-yellow-400 transition-colors cursor-pointer">
+                <Link
+                  href="#about"
+                  className="text-white hover:text-yellow-400 transition-colors cursor-pointer"
+                >
                   <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-base cursor-pointer">
                     О Нас
                   </div>
@@ -108,7 +118,10 @@ function Header() {
               <div className="flex items-center space-x-4 lg:space-x-7">
                 {/* Social Icons - Desktop Only */}
                 <div className="nav-links-container items-center space-x-4">
-                  <a href="https://t.me/folkprint_b2b" className="text-gray-200 hover:text-blue-500 transition-colors">
+                  <a
+                    href="https://t.me/folkprint_b2b"
+                    className="text-gray-200 hover:text-blue-500 transition-colors"
+                  >
                     <FaTelegram className="w-8 h-8 cursor-pointer active:scale-95 duration-200" />
                   </a>
                   <a
@@ -120,8 +133,11 @@ function Header() {
                 </div>
 
                 {/* Social Icons - Tablet Only */}
-                <div className="hidden sm:flex lg:hidden items-center space-x-3" >
-                  <a href="https://t.me/folkprint_b2b" className="text-gray-200 hover:text-blue-500 transition-colors">
+                <div className="hidden sm:flex lg:hidden items-center space-x-3">
+                  <a
+                    href="https://t.me/folkprint_b2b"
+                    className="text-gray-200 hover:text-blue-500 transition-colors"
+                  >
                     <FaTelegram className="w-6 h-6 cursor-pointer active:scale-95 duration-200" />
                   </a>
                   <a
@@ -161,7 +177,10 @@ function Header() {
                 </div>
 
                 {/* Mobile Menu Button - Mobile and Tablet Only */}
-                <button className="lg:hidden text-white p-2" onClick={toggleMobileMenu}>
+                <button
+                  className="lg:hidden text-white p-2"
+                  onClick={toggleMobileMenu}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -173,7 +192,11 @@ function Header() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                      d={
+                        mobileMenuOpen
+                          ? "M6 18L18 6M6 6l12 12"
+                          : "M4 6h16M4 12h16M4 18h16"
+                      }
                     />
                   </svg>
                 </button>
@@ -234,13 +257,15 @@ function Header() {
                       className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold text-center flex items-center justify-center"
                       href="tel:+998993333073"
                     >
-                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" /> +998 99 333 30 73
+                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" />{" "}
+                      +998 99 333 30 73
                     </a>
                     <a
                       className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold text-center flex items-center justify-center"
                       href="tel:+998957877755"
                     >
-                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" /> +998 95 787 77 55
+                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" />{" "}
+                      +998 95 787 77 55
                     </a>
                   </div>
                 </div>
@@ -253,7 +278,9 @@ function Header() {
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Качественная корпоративная одежда с логотипом
             </h1>
-            <h2 className="text-gray-300 text-xl sm:text-2xl md:text-2xl">От идеи до реализации</h2>
+            <h2 className="text-gray-300 text-xl sm:text-2xl md:text-2xl">
+              От идеи до реализации
+            </h2>
           </div>
 
           {/* Button Section */}
@@ -281,7 +308,9 @@ function Header() {
               </button>
             </div>
 
-            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-6">Какое способ вам удобнее?</h1>
+            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-6">
+              Какое способ вам удобнее?
+            </h1>
 
             {/* Social Icons - Responsive sizes */}
             <div className="flex justify-center space-x-8 my-6">
@@ -306,22 +335,25 @@ function Header() {
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
-                <span className={`font-bold ${getTextSize()}`}>+998 99 333 30 73</span>
+                <span className={`font-bold ${getTextSize()}`}>
+                  +998 99 333 30 73
+                </span>
               </a>
               <a
                 href="tel:+998957877755"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
-                <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
+                <span className={`font-bold ${getTextSize()}`}>
+                  +998 95 787 77 55
+                </span>
               </a>
             </div>
           </div>
         </div>
       )}
-
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;
