@@ -31,7 +31,6 @@ function Header() {
       document.body.style.overflow = "hidden"
     }
     setMobileMenuOpen(!mobileMenuOpen)
-    setScrolled(true)
   }
 
   function toggleVisitCard() {
@@ -46,6 +45,16 @@ function Header() {
   function getTextSize() {
     return "text-base sm:text-lg md:text-xl"
   }
+
+  useEffect(() => {
+    console.log("Window width:", window.innerWidth)
+    const handleResize = () => {
+      console.log("Resized width:", window.innerWidth)
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   return (
     <>
@@ -76,6 +85,7 @@ function Header() {
               />
 
               {/* Navigation Links - Desktop Only */}
+
               <div className="nav-links-container items-center space-x-8">
                 <Link href="#portfolio" className="text-white hover:text-yellow-400 transition-colors cursor-pointer">
                   <div className="text-white hover:text-yellow-400 transition-colors font-semibold text-base cursor-pointer">
@@ -97,7 +107,7 @@ function Header() {
               {/* Right Side Content */}
               <div className="flex items-center space-x-4 lg:space-x-7">
                 {/* Social Icons - Desktop Only */}
-                <div className="social-icons-desktop items-center space-x-4">
+                <div className="nav-links-container items-center space-x-4">
                   <a href="https://t.me/folkprint_b2b" className="text-gray-200 hover:text-blue-500 transition-colors">
                     <FaTelegram className="w-8 h-8 cursor-pointer active:scale-95 duration-200" />
                   </a>
@@ -110,7 +120,7 @@ function Header() {
                 </div>
 
                 {/* Social Icons - Tablet Only */}
-                <div className="social-icons-tablet items-center space-x-3">
+                <div className="hidden sm:flex lg:hidden items-center space-x-3" >
                   <a href="https://t.me/folkprint_b2b" className="text-gray-200 hover:text-blue-500 transition-colors">
                     <FaTelegram className="w-6 h-6 cursor-pointer active:scale-95 duration-200" />
                   </a>
@@ -123,7 +133,7 @@ function Header() {
                 </div>
 
                 {/* Phone Numbers - Desktop Only */}
-                <div className="phone-numbers-desktop">
+                <div className="nav-links-container">
                   <div className="flex flex-col space-y-2">
                     <a
                       className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
@@ -141,7 +151,7 @@ function Header() {
                 </div>
 
                 {/* Phone Button - Mobile and Tablet */}
-                <div className="phone-button-mobile">
+                <div className="lg:hidden">
                   <a
                     className="bg-white rounded-full p-3 text-black flex items-center justify-center"
                     href="tel:+998993333073"
@@ -151,7 +161,7 @@ function Header() {
                 </div>
 
                 {/* Mobile Menu Button - Mobile and Tablet Only */}
-                <button className="mobile-menu-button text-white p-2" onClick={toggleMobileMenu}>
+                <button className="lg:hidden text-white p-2" onClick={toggleMobileMenu}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -172,7 +182,7 @@ function Header() {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-              <div className="mobile-menu bg-black bg-opacity-95 fixed top-[70px] left-0 right-0 bottom-0 overflow-y-auto px-4 py-4">
+              <div className="lg:hidden block bg-black bg-opacity-95 fixed top-[70px] left-0 right-0 bottom-0 overflow-y-auto px-4 py-4">
                 <div className="flex flex-col space-y-4">
                   <Link
                     href="#portfolio"
@@ -310,93 +320,6 @@ function Header() {
         </div>
       )}
 
-      {/* Add CSS for animation and responsive classes */}
-      <style jsx>{`
-        @keyframes slideUp {
-          from {
-            transform: translateY(50px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        .animate-slideUp {
-          animation: slideUp 0.3s ease-out forwards;
-        }
-        
-        /* Custom responsive classes */
-        .nav-links-container {
-          display: none;
-        }
-        
-        @media (min-width: 1024px) {
-          .nav-links-container {
-            display: flex;
-          }
-        }
-        
-        .social-icons-desktop {
-          display: none;
-        }
-        
-        @media (min-width: 1024px) {
-          .social-icons-desktop {
-            display: flex;
-          }
-        }
-        
-        .social-icons-tablet {
-          display: none;
-        }
-        
-        @media (min-width: 640px) and (max-width: 1023px) {
-          .social-icons-tablet {
-            display: flex;
-          }
-        }
-        
-        .phone-numbers-desktop {
-          display: none;
-        }
-        
-        @media (min-width: 1024px) {
-          .phone-numbers-desktop {
-            display: block;
-          }
-        }
-        
-        .phone-button-mobile {
-          display: block;
-        }
-        
-        @media (min-width: 1024px) {
-          .phone-button-mobile {
-            display: none;
-          }
-        }
-        
-        .mobile-menu-button {
-          display: block;
-        }
-        
-        @media (min-width: 1024px) {
-          .mobile-menu-button {
-            display: none;
-          }
-        }
-        
-        .mobile-menu {
-          display: block;
-        }
-        
-        @media (min-width: 1024px) {
-          .mobile-menu {
-            display: none;
-          }
-        }
-      `}</style>
     </>
   )
 }
