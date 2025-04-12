@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Folk Print</title>
+        <title>Качественная корпоративная одежда с логотипом | Folk Print</title>
         <meta name="Folk print" content="Качественная корпоративная одежда с логотипом" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <link
