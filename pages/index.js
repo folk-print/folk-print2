@@ -16,8 +16,6 @@ export default function Home() {
           rel="icon"
           type="image/x-icon"
           href="https://i.postimg.cc/kMsnVdJS/001.png"
-        ></link>
-      </Head>
             <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"></script>
 <script>
@@ -27,6 +25,8 @@ export default function Home() {
 
   gtag('config', 'AW-17006444297');
 </script>
+        ></link>
+      </Head>
       <Layout>
         <About />
         <Products />
