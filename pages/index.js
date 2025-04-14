@@ -5,6 +5,7 @@ import Iframe from "../components/iFrame";
 import Layout from "../components/Layout";
 import Partners from "../components/partners";
 import Products from "../components/products";
+import Script from "next/script";
 
 export default function Home() {
   return (
@@ -18,47 +19,33 @@ export default function Home() {
           type="image/x-icon"
           href="https://i.postimg.cc/kMsnVdJS/001.png"
         />
+      </Head>
 
-        {/* Global site tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"></script>
-        <script dangerouslySetInnerHTML={{
+      {/* Google Tag Manager Global Site Script */}
+      <Script 
+        strategy="afterInteractive" 
+        src={`https://www.googletagmanager.com/gtag/js?id=AW-17006444297`}
+      />
+      
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
             gtag('config', 'AW-17006444297');
+            
+            gtag('event', 'conversion', {
+              'send_to': 'AW-17006444297/8kVNCOCJprgaEIn-pq0_',
+              'value': 1.0,
+              'currency': 'USD'
+            });
           `,
-        }} />
-
-        {/* Conversion Event Function */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            function gtag_report_conversion(url) {
-              var callback = function () {
-                if (typeof(url) !== 'undefined') {
-                  window.location = url;
-                }
-              };
-              gtag('event', 'conversion', {
-                'send_to': 'AW-17006444297/8kVNCOCJprgaEIn-pq0_',
-                'value': 1.0,
-                'currency': 'USD',
-                'event_callback': callback
-              });
-              return false;
-            }
-          `,
-        }} />
-          <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-01ZJXKDZ9D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-01ZJXKDZ9D');
-</script>
-      </Head>
+        }}
+      />
 
       <Layout>
         <About />
