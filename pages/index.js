@@ -27,6 +27,14 @@ export default function Home() {
             gtag('config', 'AW-17006444297');
           `,
         }} />
+  <!-- Event snippet for Просмотр страницы conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17006444297/8kVNCOCJprgaEIn-pq0_',
+      'value': 1.0,
+      'currency': 'USD'
+  });
+</script>
       </Head>
       <Layout>
         <About />
