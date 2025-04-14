@@ -9,15 +9,6 @@ export default function Home() {
   return (
     <div>
       <Head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17006444297');
-</script>
         <title>Качественная корпоративная одежда с логотипом в Узбекистане | Folk Print</title>
         <meta name="Folk print" content="Качественная корпоративная одежда с логотипом" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
@@ -26,7 +17,16 @@ export default function Home() {
           type="image/x-icon"
           href="https://i.postimg.cc/kMsnVdJS/001.png"
         ></link>
-            
+        {/* Google Tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17006444297');
+          `,
+        }} />
       </Head>
       <Layout>
         <About />
