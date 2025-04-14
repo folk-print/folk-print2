@@ -18,6 +18,15 @@ export default function Home() {
           href="https://i.postimg.cc/kMsnVdJS/001.png"
         ></link>
       </Head>
+            <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17006444297');
+</script>
       <Layout>
         <About />
         <Products />
