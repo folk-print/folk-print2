@@ -22,34 +22,28 @@ export default function Home() {
           content="корпоративная одежда, печать на футболках, печать на одежде, сделать футболку на заказ, принты на кепках, униформа, спецодежда, униформа на заказ, форма для персонала, форма для официантов, форма для персонала ресторана, спецодежда для продавцов, нанесение логотипа на футбольную форму, нанесение логотипа на спецодежду"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="icon"
-          href="https://i.postimg.cc/kMsnVdJS/001.png"
-          type="image/png"
-          title="Униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте"
-        />
+        <meta name="robots" content="index, follow" />
 
-        {/* Open Graph for social media sharing */}
+        {/* Favicon */}
+        <link rel="icon" href="https://i.postimg.cc/kMsnVdJS/001.png" type="image/png" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Корпоративная одежда с логотипом | Folk Print" />
         <meta
           property="og:description"
           content="Закажите корпоративную одежду с логотипом в Узбекистане от Folk Print. Идеально для вашей команды."
         />
         <meta property="og:image" content="https://i.postimg.cc/kMsnVdJS/001.png" />
-        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://folkprint.uz" />
-        <meta property="og:site_name" content="Униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте">
-        <meta property="og:title" content="Униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте">
-        <meta property="og:description" content="Производство униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте."/>
-        <meta name="robots" content="index, follow" />
+        <meta property="og:site_name" content="Folk Print" />
       </Head>
 
-      {/* Google Tag Manager Global Site Script */}
+      {/* Google Tag Manager */}
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"
       />
-
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -69,6 +63,7 @@ export default function Home() {
         }}
       />
 
+      {/* Main Page Sections */}
       <Layout>
         <About />
         <Products />
