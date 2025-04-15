@@ -19,13 +19,14 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="корпоративная одежда, логотип, одежда с логотипом, узбекистан, folk print"
+          content="корпоративная одежда, печать на футболках, печать на одежде, сделать футболку на заказ, принты на кепках, униформа, спецодежда, униформа на заказ, форма для персонала, форма для официантов, форма для персонала ресторана, спецодежда для продавцов, нанесение логотипа на футбольную форму, нанесение логотипа на спецодежду"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="icon"
           href="https://i.postimg.cc/kMsnVdJS/001.png"
           type="image/png"
+          title="Униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте"
         />
 
         {/* Open Graph for social media sharing */}
@@ -36,7 +37,10 @@ export default function Home() {
         />
         <meta property="og:image" content="https://i.postimg.cc/kMsnVdJS/001.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.uz" />
+        <meta property="og:url" content="https://folkprint.uz" />
+        <meta property="og:site_name" content="Униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте">
+        <meta property="og:title" content="Униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте">
+        <meta property="og:description" content="Производство униформа, рекламная одежда, корпоративная одежда и спецодежда на заказ в Ташкенте."/>
         <meta name="robots" content="index, follow" />
       </Head>
 
