@@ -12,7 +12,11 @@ export default function Home() {
   return (
     <>
       <Head>
+        {/* Primary Meta Tags */}
         <title>Корпоративная одежда с логотипом в Узбекистане | Folk Print</title>
+        <meta name="charset" content="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <meta
           name="description"
           content="Изготовление корпоративной одежды с логотипом в Узбекистане. Высокое качество, индивидуальный подход, выгодные цены. Folk Print — стиль для вашей команды."
@@ -21,13 +25,15 @@ export default function Home() {
           name="keywords"
           content="корпоративная одежда, печать на футболках, печать на одежде, сделать футболку на заказ, принты на кепках, униформа, спецодежда, униформа на заказ, форма для персонала, форма для официантов, форма для персонала ресторана, спецодежда для продавцов, нанесение логотипа на футбольную форму, нанесение логотипа на спецодежду"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://folkprint.uz/" />
 
         {/* Favicon */}
         <link rel="icon" href="https://i.postimg.cc/kMsnVdJS/001.png" type="image/png" />
 
-        {/* Open Graph Meta Tags */}
+        {/* Theme Color for Mobile Browsers */}
+        <meta name="theme-color" content="#fcac45" />
+
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Корпоративная одежда с логотипом | Folk Print" />
         <meta
@@ -37,6 +43,19 @@ export default function Home() {
         <meta property="og:image" content="https://i.postimg.cc/kMsnVdJS/001.png" />
         <meta property="og:url" content="https://folkprint.uz" />
         <meta property="og:site_name" content="Folk Print" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Корпоративная одежда с логотипом | Folk Print" />
+        <meta
+          name="twitter:description"
+          content="Изготовление корпоративной одежды с логотипом в Узбекистане. Высокое качество и индивидуальный подход от Folk Print."
+        />
+        <meta name="twitter:image" content="https://i.postimg.cc/kMsnVdJS/001.png" />
+
+        {/* Fonts Preconnect (if you use Google Fonts somewhere) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       </Head>
 
       {/* Google Tag Manager */}
