@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Качественная корпоративная одежда с логотипом в Узбекистане | Folk Print</title>
+        <title>Корпоративная одежда с логотипом в Узбекистане</title>
         <meta name="Folk print" content="Качественная корпоративная одежда с логотипом" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
