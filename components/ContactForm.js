@@ -76,9 +76,6 @@ export default function ContactForm({ onClose }) {
         required
         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
       />
-      <small className="text-gray-500 block pl-1">
-        Формат: <strong>+998 XX XXX XX XX</strong>
-      </small>
 
       <button
         type="submit"
