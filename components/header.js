@@ -1,6 +1,6 @@
 "use client";
 
-import ContactForm from "@/components/ContactForm";
+import ContactForm from './ContactForm';
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
