@@ -1,5 +1,7 @@
 "use client"
 
+import ContactForm from './ContactForm';
+
 import { useState, useEffect } from "react"
 import { FaTelegram, FaInstagram, FaPhoneAlt } from "react-icons/fa"
 import { X } from "lucide-react"
