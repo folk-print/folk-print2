@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function ContactForm({ onClose }) {
   const [formData, setFormData] = useState({ name: "", phone: "" });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,12 +23,13 @@ export default function ContactForm({ onClose }) {
         }),
       });
 
-      alert("Спасибо! Мы скоро с вами свяжемся.");
       setFormData({ name: "", phone: "" });
+      setSubmitted(true);
+
       if (onClose) onClose();
     } catch (error) {
       console.error("Ошибка при отправке:", error);
-      alert("Произошла ошибка. Попробуйте еще раз.");
+      // optionally set error message state here
     }
   };
 
@@ -60,6 +62,12 @@ export default function ContactForm({ onClose }) {
       >
         Отправить заявку
       </button>
+
+      {submitted && (
+        <p className="text-green-600 text-center font-medium pt-2">
+          Спасибо! Мы скоро с вами свяжемся.
+        </p>
+      )}
     </form>
   );
 }
