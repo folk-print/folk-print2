@@ -1,3 +1,4 @@
+import ContactForm from './ContactForm';
 import { useState } from "react";
 import styles from "../styles/Count.module.scss";
 import { FcIdea } from "react-icons/fc"
@@ -133,6 +134,8 @@ function Count() {
                 <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
               </a>
             </div>
+  {/* Contact Form */}
+            <ContactForm />
           </div>
         </div>
       )}
