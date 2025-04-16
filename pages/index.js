@@ -7,7 +7,6 @@ import Products from "../components/products";
 import Partners from "../components/partners";
 import Count from "../components/countUp";
 import Iframe from "../components/iFrame";
-import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   return (
@@ -61,6 +60,10 @@ export default function Home() {
 
       {/* Google Tag Manager */}
       <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"
+      />
+      <Script
         id="gtag-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -79,10 +82,8 @@ export default function Home() {
         }}
       />
 
-
       {/* Main Page Sections */}
       <Layout>
-        <ContactForm />
         <About />
         <Products />
         <Partners />
