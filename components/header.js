@@ -1,5 +1,7 @@
 "use client";
 
+import ContactForm from "@/components/ContactForm";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaTelegram, FaInstagram, FaPhoneAlt } from "react-icons/fa";
@@ -298,7 +300,7 @@ function Header() {
       {/* Contact Modal - Fixed positioning for consistent display across devices */}
       {showContactModal && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="bg-white w-full max-w-md rounded-xl p-6 animate-slideUp">
+          <div className="bg-white w-full max-w-md rounded-xl p-6 animate-slideUp max-h-[90vh] overflow-y-auto">
             <div className="flex justify-end mb-2">
               <button
                 onClick={toggleVisitCard}
@@ -307,12 +309,12 @@ function Header() {
                 <X className="h-8 w-8" />
               </button>
             </div>
-
+      
             <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-6">
               Какое способ вам удобнее?
             </h1>
-
-            {/* Social Icons - Responsive sizes */}
+      
+            {/* Social Icons */}
             <div className="flex justify-center space-x-8 my-6">
               <a
                 href="https://t.me/folkprint_b2b"
@@ -327,28 +329,61 @@ function Header() {
                 <FaInstagram className={getIconSize()} />
               </a>
             </div>
-
-            {/* Phone Numbers - Matching header style */}
+      
+            {/* Phone Numbers */}
             <div className="space-y-4 mt-6">
               <a
                 href="tel:+998993333073"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
-                <span className={`font-bold ${getTextSize()}`}>
-                  +998 99 333 30 73
-                </span>
+                <span className={`font-bold ${getTextSize()}`}>+998 99 333 30 73</span>
               </a>
               <a
                 href="tel:+998957877755"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
-                <span className={`font-bold ${getTextSize()}`}>
-                  +998 95 787 77 55
-                </span>
+                <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
               </a>
             </div>
+      
+            {/* Contact Form */}
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("Форма отправлена!");
+              }}
+              className="mt-8 space-y-4"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Ваше имя"
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Ваше сообщение"
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-3 rounded-full transition-all duration-200 active:scale-95"
+              >
+                Отправить сообщение
+              </button>
+            </form>
           </div>
         </div>
       )}
