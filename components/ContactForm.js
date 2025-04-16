@@ -4,6 +4,28 @@ export default function ContactForm({ onClose }) {
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
 
+  const formatUzbekPhone = (value) => {
+    const digits = value.replace(/[^\d]/g, "");
+
+    let formatted = "+998";
+
+    if (digits.startsWith("998")) {
+      const raw = digits.slice(3); // after 998
+      if (raw.length > 0) formatted += " " + raw.substring(0, 2);
+      if (raw.length >= 3) formatted += " " + raw.substring(2, 5);
+      if (raw.length >= 6) formatted += " " + raw.substring(5, 7);
+      if (raw.length >= 8) formatted += " " + raw.substring(7, 9);
+    }
+
+    return formatted;
+  };
+
+  const handlePhoneChange = (e) => {
+    const input = e.target.value;
+    const formatted = formatUzbekPhone(input);
+    setFormData((prev) => ({ ...prev, phone: formatted }));
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -29,7 +51,6 @@ export default function ContactForm({ onClose }) {
       if (onClose) onClose();
     } catch (error) {
       console.error("Ошибка при отправке:", error);
-      // optionally set error message state here
     }
   };
 
@@ -50,11 +71,14 @@ export default function ContactForm({ onClose }) {
         type="tel"
         name="phone"
         value={formData.phone}
-        onChange={handleChange}
-        placeholder="Телефон"
+        onChange={handlePhoneChange}
+        placeholder="+998 XX XXX XX XX"
         required
         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
       />
+      <small className="text-gray-500 block pl-1">
+        Формат: <strong>+998 XX XXX XX XX</strong>
+      </small>
 
       <button
         type="submit"
