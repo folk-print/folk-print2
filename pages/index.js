@@ -78,19 +78,6 @@ export default function Home() {
       />
 
       <Layout>
-        <div className="flex justify-center my-8">
-          <button
-            onClick={() => setShowForm(true)}
-            className="bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition"
-          >
-            Обратная связь
-          </button>
-        </div>
-
-        {showForm && (
-          <ContactForm onClose={() => setShowForm(false)} />
-        )}
-
         <About />
         <Products />
         <Partners />
