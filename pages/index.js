@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
 
@@ -11,11 +10,10 @@ import Iframe from "../components/iFrame";
 import ContactForm from "../components/ContactForm";
 
 export default function Home() {
-  const [showForm, setShowForm] = useState(false);
-
   return (
     <>
       <Head>
+        {/* Primary Meta Tags */}
         <title>Корпоративная одежда с логотипом в Узбекистане | Folk Print</title>
         <meta name="charset" content="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,9 +27,14 @@ export default function Home() {
           content="корпоративная одежда, печать на футболках, печать на одежде, сделать футболку на заказ, принты на кепках, униформа, спецодежда, униформа на заказ, форма для персонала, форма для официантов, форма для персонала ресторана, спецодежда для продавцов, нанесение логотипа на футбольную форму, нанесение логотипа на спецодежду"
         />
         <link rel="canonical" href="https://folkprint.uz/" />
+
+        {/* Favicon */}
         <link rel="icon" href="https://i.postimg.cc/kMsnVdJS/001.png" type="image/png" />
+
+        {/* Theme Color for Mobile Browsers */}
         <meta name="theme-color" content="#fcac45" />
 
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Корпоративная одежда с логотипом | Folk Print" />
         <meta
@@ -42,6 +45,7 @@ export default function Home() {
         <meta property="og:url" content="https://folkprint.uz" />
         <meta property="og:site_name" content="Folk Print" />
 
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Корпоративная одежда с логотипом | Folk Print" />
         <meta
@@ -50,10 +54,12 @@ export default function Home() {
         />
         <meta name="twitter:image" content="https://i.postimg.cc/kMsnVdJS/001.png" />
 
+        {/* Fonts Preconnect (if you use Google Fonts somewhere) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       </Head>
 
+      {/* Google Tag Manager */}
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"
@@ -62,7 +68,7 @@ export default function Home() {
         id="gtag-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: `
+          __html: 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -73,11 +79,13 @@ export default function Home() {
               'value': 1.0,
               'currency': 'USD'
             });
-          `,
+          ,
         }}
       />
 
+      {/* Main Page Sections */}
       <Layout>
+        <ContactForm />
         <About />
         <Products />
         <Partners />
