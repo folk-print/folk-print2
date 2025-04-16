@@ -85,8 +85,8 @@ export default function Home() {
 
       {/* Main Page Sections */}
       <Layout>
-        <About />
         <ContactForm />
+        <About />
         <Products />
         <Partners />
         <Count />
