@@ -61,14 +61,10 @@ export default function Home() {
 
       {/* Google Tag Manager */}
       <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=AW-17006444297"
-      />
-      <Script
         id="gtag-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: 
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -79,9 +75,10 @@ export default function Home() {
               'value': 1.0,
               'currency': 'USD'
             });
-          ,
+          `,
         }}
       />
+
 
       {/* Main Page Sections */}
       <Layout>
