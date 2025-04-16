@@ -349,41 +349,7 @@ function Header() {
             </div>
       
             {/* Contact Form */}
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Форма отправлена!");
-              }}
-              className="mt-8 space-y-4"
-            >
-              <input
-                type="text"
-                name="name"
-                placeholder="Ваше имя"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Ваше сообщение"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-3 rounded-full transition-all duration-200 active:scale-95"
-              >
-                Отправить сообщение
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       )}
