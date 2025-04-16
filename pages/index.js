@@ -7,6 +7,7 @@ import Products from "../components/products";
 import Partners from "../components/partners";
 import Count from "../components/countUp";
 import Iframe from "../components/iFrame";
+import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   return (
@@ -85,6 +86,7 @@ export default function Home() {
       {/* Main Page Sections */}
       <Layout>
         <About />
+        <ContactForm />
         <Products />
         <Partners />
         <Count />
