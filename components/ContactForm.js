@@ -40,7 +40,7 @@ export default function ContactForm({ onClose }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          chat_id: "895653052",
+          chat_id: "5061986357",
           text: message,
         }),
       });
