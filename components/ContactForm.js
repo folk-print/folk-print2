@@ -36,11 +36,11 @@ export default function ContactForm({ onClose }) {
 
     const message = `Новая заявка:\n👤 Имя: ${formData.name}\n📞 Телефон: ${formData.phone}`;
     try {
-      await fetch(`https://api.telegram.org/bot7037879367:AAG0ISCCehaD3XKZT8K6Ka7D0Rk-w14gS_0/sendMessage`, {
+      await fetch(`https://api.telegram.org/bot7240602303:AAFUOBY-9rF-Ny4V-2qL5xJdLocFnYBwWZE/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          chat_id: "1152654889",
+          chat_id: "7240602303",
           text: message,
         }),
       });
