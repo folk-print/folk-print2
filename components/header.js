@@ -155,13 +155,13 @@ function Header() {
                   <div className="flex flex-col space-y-2">
                     <a
                       className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
-                      href="tel:+998993333073"
+                      href="tel:+998957877755"
                     >
                       <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 95 787 77 55
                     </a>
                     <a
                       className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
-                      href="tel:+998957877755"
+                      href="tel:+998333388608"
                     >
                       <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 33 338 86 08
                     </a>
@@ -172,7 +172,7 @@ function Header() {
                 <div className="lg:hidden">
                   <a
                     className="bg-white rounded-full p-3 text-black flex items-center justify-center"
-                    href="tel:+998993333073"
+                    href="tel:+998333388608"
                   >
                     <FaPhoneAlt className="h-5 w-5" />
                   </a>
@@ -257,17 +257,17 @@ function Header() {
                   <div className="flex flex-col space-y-2 py-2">
                     <a
                       className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold text-center flex items-center justify-center"
-                      href="tel:+998993333073"
-                    >
-                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" />{" "}
-                      +998 99 333 30 73
-                    </a>
-                    <a
-                      className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold text-center flex items-center justify-center"
                       href="tel:+998957877755"
                     >
                       <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" />{" "}
                       +998 95 787 77 55
+                    </a>
+                    <a
+                      className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold text-center flex items-center justify-center"
+                      href="tel:+998333388608"
+                    >
+                      <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" />{" "}
+                      +998 33 338 86 08
                     </a>
                   </div>
                 </div>
@@ -333,14 +333,14 @@ function Header() {
             {/* Phone Numbers */}
             <div className="space-y-4 mt-6">
               <a
-                href="tel:+998993333073"
+                href="tel:+998957877755"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
                 <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
               </a>
               <a
-                href="tel:+998957877755"
+                href="tel:+998333388608"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
