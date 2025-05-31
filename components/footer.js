@@ -57,7 +57,7 @@ export default function Footer() {
                 href="tel:+998957877755"
                 className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors"
               >
-                +99895 787 77 55
+                +998 95 787 77 55
               </a>
               <br />
               <a
