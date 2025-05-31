@@ -157,13 +157,13 @@ function Header() {
                       className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
                       href="tel:+998993333073"
                     >
-                      <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 99 333 30 73
+                      <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 95 787 77 55
                     </a>
                     <a
                       className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
                       href="tel:+998957877755"
                     >
-                      <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 95 787 77 55
+                      <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 33 338 86 08
                     </a>
                   </div>
                 </div>
@@ -337,14 +337,14 @@ function Header() {
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
-                <span className={`font-bold ${getTextSize()}`}>+998 99 333 30 73</span>
+                <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
               </a>
               <a
                 href="tel:+998957877755"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
-                <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
+                <span className={`font-bold ${getTextSize()}`}>+998 33 338 86 08</span>
               </a>
             </div>
       
