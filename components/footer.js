@@ -54,17 +54,17 @@ export default function Footer() {
             <div className="text-gray-500 text-lg md:text-xl mb-3">
               Наши номера: <br />
               <a
-                href="tel:+998993333073"
-                className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors"
-              >
-                +998 99 333 30 73
-              </a>
-              <br />
-              <a
                 href="tel:+998957877755"
                 className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors"
               >
-                +998 95 787 77 55
+                +99895 787 77 55
+              </a>
+              <br />
+              <a
+                href="tel:+998333388608"
+                className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors"
+              >
+                +998 33 338 86 08
               </a>
             </div>
 
