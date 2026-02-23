@@ -73,11 +73,6 @@ export default function Home() {
             gtag('js', new Date());
             gtag('config', 'AW-17006444297');
             gtag('config', 'G-01ZJXKDZ9D');
-            gtag('event', 'conversion', {
-              'send_to': 'AW-17006444297/8kVNCOCJprgaEIn-pq0_',
-              'value': 1.0,
-              'currency': 'USD'
-            });
           `,
         }}
       />

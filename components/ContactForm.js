@@ -45,6 +45,19 @@ export default function ContactForm({ onClose }) {
         }),
       });
 
+      // Отправляем событие generate_lead в Google Analytics / Google Ads
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          currency: "USD",
+          value: 1.0,
+        });
+        window.gtag("event", "conversion", {
+          send_to: "AW-17006444297/8kVNCOCJprgaEIn-pq0_",
+          value: 1.0,
+          currency: "USD",
+        });
+      }
+
       setFormData({ name: "", phone: "" });
       setSubmitted(true);
 
