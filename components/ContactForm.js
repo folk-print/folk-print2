@@ -36,7 +36,7 @@ export default function ContactForm({ onClose }) {
 
     const message = `Новая заявка:\n👤 Имя: ${formData.name}\n📞 Телефон: ${formData.phone}`;
     try {
-      await fetch(`https://api.telegram.org/bot7240602303:AAFUOBY-9rF-Ny4V-2qL5xJdLocFnYBwWZE/sendMessage`, {
+      const response = await fetch(`https://api.telegram.org/bot7240602303:AAFUOBY-9rF-Ny4V-2qL5xJdLocFnYBwWZE/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -45,23 +45,19 @@ export default function ContactForm({ onClose }) {
         }),
       });
 
-      // Отправляем событие generate_lead в Google Analytics / Google Ads
-      if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        window.gtag("event", "generate_lead", {
-          currency: "USD",
-          value: 1.0,
-        });
-        window.gtag("event", "conversion", {
-          send_to: "AW-17006444297/8kVNCOCJprgaEIn-pq0_",
-          value: 1.0,
-          currency: "USD",
-        });
+      if (response.ok) {
+        setFormData({ name: "", phone: "" });
+        setSubmitted(true);
+
+        if (typeof window !== "undefined" && window.gtag) {
+          window.gtag('event', 'generate_lead', {
+            event_category: 'form',
+            event_label: 'contact_form'
+          });
+        }
+
+        if (onClose) onClose();
       }
-
-      setFormData({ name: "", phone: "" });
-      setSubmitted(true);
-
-      if (onClose) onClose();
     } catch (error) {
       console.error("Ошибка при отправке:", error);
     }

@@ -71,7 +71,9 @@ export default function Home() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-17006444297');
+            gtag('config', 'AW-17006444297', {
+              'send_page_view': true
+            });
             gtag('config', 'G-01ZJXKDZ9D');
           `,
         }}

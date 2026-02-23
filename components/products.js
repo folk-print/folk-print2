@@ -129,6 +129,14 @@ export default function Products() {
               <a
                 href="tel:+998957877755"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag('event', 'click_phone', {
+                      event_category: 'contact',
+                      event_label: 'products_modal_phone'
+                    });
+                  }
+                }}
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
                 <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
@@ -136,6 +144,14 @@ export default function Products() {
               <a
                 href="tel:+998333388608"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag('event', 'click_phone', {
+                      event_category: 'contact',
+                      event_label: 'products_modal_phone'
+                    });
+                  }
+                }}
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
                 <span className={`font-bold ${getTextSize()}`}>+998 33 338 86 08</span>

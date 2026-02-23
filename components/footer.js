@@ -56,6 +56,14 @@ export default function Footer() {
               <a
                 href="tel:+998957877755"
                 className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors"
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag('event', 'click_phone', {
+                      event_category: 'contact',
+                      event_label: 'footer_phone'
+                    });
+                  }
+                }}
               >
                 +998 95 787 77 55
               </a>
@@ -63,6 +71,14 @@ export default function Footer() {
               <a
                 href="tel:+998333388608"
                 className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors"
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag('event', 'click_phone', {
+                      event_category: 'contact',
+                      event_label: 'footer_phone'
+                    });
+                  }
+                }}
               >
                 +998 33 338 86 08
               </a>

@@ -156,12 +156,28 @@ function Header() {
                     <a
                       className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
                       href="tel:+998957877755"
+                      onClick={() => {
+                        if (typeof window !== "undefined" && window.gtag) {
+                          window.gtag('event', 'click_phone', {
+                            event_category: 'contact',
+                            event_label: 'header_phone'
+                          });
+                        }
+                      }}
                     >
                       <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 95 787 77 55
                     </a>
                     <a
                       className="bg-white rounded-full py-2 px-4 text-base text-black font-bold hover:bg-gray-100 transition-colors flex items-center"
                       href="tel:+998333388608"
+                      onClick={() => {
+                        if (typeof window !== "undefined" && window.gtag) {
+                          window.gtag('event', 'click_phone', {
+                            event_category: 'contact',
+                            event_label: 'header_phone'
+                          });
+                        }
+                      }}
                     >
                       <FaPhoneAlt className="mr-2 h-3 w-3" /> +998 33 338 86 08
                     </a>
@@ -173,6 +189,14 @@ function Header() {
                   <a
                     className="bg-white rounded-full p-3 text-black flex items-center justify-center"
                     href="tel:+998333388608"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && window.gtag) {
+                        window.gtag('event', 'click_phone', {
+                          event_category: 'contact',
+                          event_label: 'mobile_phone_button'
+                        });
+                      }
+                    }}
                   >
                     <FaPhoneAlt className="h-5 w-5" />
                   </a>
@@ -258,6 +282,14 @@ function Header() {
                     <a
                       className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold text-center flex items-center justify-center"
                       href="tel:+998957877755"
+                      onClick={() => {
+                        if (typeof window !== "undefined" && window.gtag) {
+                          window.gtag('event', 'click_phone', {
+                            event_category: 'contact',
+                            event_label: 'mobile_menu_phone'
+                          });
+                        }
+                      }}
                     >
                       <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" />{" "}
                       +998 95 787 77 55
@@ -265,6 +297,14 @@ function Header() {
                     <a
                       className="bg-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base text-black font-bold text-center flex items-center justify-center"
                       href="tel:+998333388608"
+                      onClick={() => {
+                        if (typeof window !== "undefined" && window.gtag) {
+                          window.gtag('event', 'click_phone', {
+                            event_category: 'contact',
+                            event_label: 'mobile_menu_phone'
+                          });
+                        }
+                      }}
                     >
                       <FaPhoneAlt className="mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3" />{" "}
                       +998 33 338 86 08
@@ -335,6 +375,14 @@ function Header() {
               <a
                 href="tel:+998957877755"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag('event', 'click_phone', {
+                      event_category: 'contact',
+                      event_label: 'modal_phone'
+                    });
+                  }
+                }}
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
                 <span className={`font-bold ${getTextSize()}`}>+998 95 787 77 55</span>
@@ -342,12 +390,20 @@ function Header() {
               <a
                 href="tel:+998333388608"
                 className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full py-3 px-4 transition-colors duration-200"
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag('event', 'click_phone', {
+                      event_category: 'contact',
+                      event_label: 'modal_phone'
+                    });
+                  }
+                }}
               >
                 <FaPhoneAlt className="mr-2 h-4 w-4" />
                 <span className={`font-bold ${getTextSize()}`}>+998 33 338 86 08</span>
               </a>
             </div>
-      
+
             {/* Contact Form */}
             <ContactForm />
           </div>
