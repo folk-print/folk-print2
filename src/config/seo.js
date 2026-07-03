@@ -75,6 +75,10 @@ export const PAGES = [
   {
     key: 'studio',
     path: '/studio',
+    // The 3D studio is hosted on the VPS at this host (folkprint.uz/studio 308-
+    // redirects here). So the studio shell self-canonicals to cassist and is left
+    // OUT of the folkprint.uz sitemap — no redirect/canonical/sitemap conflict.
+    canonHost: 'https://folkprint-studio.cassist.uz',
     ru: {
       title: '3D-конструктор футболок онлайн · макет | Folk Print',
       description: 'Создайте макет футболки, худи или кепки онлайн в 3D-конструкторе Folk Print. Загрузите принт, посмотрите результат и закажите печать в Ташкенте.',

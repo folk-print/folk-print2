@@ -15,9 +15,11 @@ const OG_IMAGE = SITE_URL + BUSINESS.ogImage
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
-// RU lives at /path, UZ mirrors under /uz/path.
-const ruUrl = (path) => SITE_URL + path
-const uzUrl = (path) => SITE_URL + '/uz' + (path === '/' ? '' : path)
+// RU lives at /path, UZ mirrors under /uz/path. `base` defaults to the site host
+// but a page can override it (page.canonHost) when it's served from another host
+// (the studio lives on the cassist VPS) — its shell then self-canonicals there.
+const ruUrl = (path, base = SITE_URL) => base + path
+const uzUrl = (path, base = SITE_URL) => base + '/uz' + (path === '/' ? '' : path)
 const outFile = (path, lang) => {
   const seg = path === '/' ? '' : path
   return lang === 'uz' ? `${DIST}/uz${seg}/index.html` : (path === '/' ? `${DIST}/index.html` : `${DIST}${seg}/index.html`)
@@ -94,7 +96,8 @@ function rootContent(page, lang) {
 
 function buildShell(template, page, lang) {
   const s = lang === 'uz' ? page.uz : page.ru
-  const canonical = lang === 'uz' ? uzUrl(page.path) : ruUrl(page.path)
+  const base = page.canonHost || SITE_URL
+  const canonical = lang === 'uz' ? uzUrl(page.path, base) : ruUrl(page.path, base)
   let html = template
   html = html.replace(/<html lang="[^"]*"/, `<html lang="${lang}"`)
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(s.title)}</title>`)
@@ -105,9 +108,9 @@ function buildShell(template, page, lang) {
 
   const head = [
     `<link rel="canonical" href="${canonical}" />`,
-    `<link rel="alternate" hreflang="ru" href="${ruUrl(page.path)}" />`,
-    `<link rel="alternate" hreflang="uz" href="${uzUrl(page.path)}" />`,
-    `<link rel="alternate" hreflang="x-default" href="${ruUrl(page.path)}" />`,
+    `<link rel="alternate" hreflang="ru" href="${ruUrl(page.path, base)}" />`,
+    `<link rel="alternate" hreflang="uz" href="${uzUrl(page.path, base)}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${ruUrl(page.path, base)}" />`,
     `<meta name="keywords" content="${esc(s.keywords.join(', '))}" />`,
     `<meta name="robots" content="index, follow" />`,
     `<meta property="og:url" content="${canonical}" />`,
@@ -142,6 +145,7 @@ function sitemap() {
   ].join('\n')
   const urls = []
   for (const p of PAGES) {
+    if (p.canonHost) continue // served off-domain (studio→cassist) — not in this host's sitemap
     for (const loc of [ruUrl(p.path), uzUrl(p.path)]) {
       urls.push(`  <url>\n    <loc>${loc}</loc>\n${alt(p.path)}\n  </url>`)
     }
@@ -174,4 +178,5 @@ writeFileSync(`${DIST}/sitemap.xml`, sitemap())
   writeFileSync(`${DIST}/404.html`, nf)
 }
 
-console.log(`[seo-shells] wrote ${count} route shells + 404.html + robots.txt + sitemap.xml (${PAGES.length * 2} sitemap URLs)`)
+const sitemapUrls = PAGES.filter((p) => !p.canonHost).length * 2
+console.log(`[seo-shells] wrote ${count} route shells + 404.html + robots.txt + sitemap.xml (${sitemapUrls} sitemap URLs)`)

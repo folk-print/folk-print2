@@ -9,8 +9,8 @@
     { "source": "/biznesu", "destination": "/", "permanent": true },
     { "source": "/shop", "destination": "/lichnoe", "permanent": true },
     { "source": "/links", "destination": "/#contacts", "permanent": true },
-    { "source": "/studio", "destination": "https://folkprint-studio.cassist.uz/studio", "permanent": false },
-    { "source": "/uz/studio", "destination": "https://folkprint-studio.cassist.uz/uz/studio", "permanent": false }
+    { "source": "/studio", "destination": "https://folkprint-studio.cassist.uz/studio", "permanent": true },
+    { "source": "/uz/studio", "destination": "https://folkprint-studio.cassist.uz/uz/studio", "permanent": true }
   ],
   "headers": [
     {
