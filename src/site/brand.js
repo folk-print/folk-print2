@@ -16,7 +16,7 @@ export const brand = {
   hours: 'Ежедневно · 09:00–20:00',   // confirmed via Google Business Profile
   mapSrc: 'https://yandex.uz/map-widget/v1/-/CPxVY2ot',
   mapLink: 'https://yandex.uz/maps/-/CPxVY2ot',
-  url: 'https://folkprint.uz', // canonical host is non-www (must match src/config/seo.js SITE_URL)
+  url: 'https://www.folkprint.uz', // canonical host is www (must match src/config/seo.js SITE_URL)
   copyright: '© 2026 Folk Print',
 }
 

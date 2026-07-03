@@ -2,8 +2,10 @@
 // generator (scripts/seo-shells.mjs → per-route static HTML + sitemap) and by the
 // app for client-side <title> sync on SPA navigation.
 //
-// Canonical host: the new site replaces folkprint.uz. One host, non-www, https.
-export const SITE_URL = 'https://folkprint.uz'
+// Canonical host: matches how the domain is actually served on Vercel (www is
+// primary; non-www 307s to www) AND the URL Google already has indexed
+// (site:folkprint.uz shows www). One host, WWW, https.
+export const SITE_URL = 'https://www.folkprint.uz'
 
 // NAP + geo for LocalBusiness / geo meta. Coordinates match the taplink map pin.
 export const BUSINESS = {
