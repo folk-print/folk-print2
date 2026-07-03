@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none" role="img" aria-label="Толстовки">
+  <rect width="480" height="360" fill="#F6F3EC"/>
+  <g stroke="#111110" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#ECE6DA" d="M188 118 L120 160 L148 200 L180 174 L176 290 L304 290 L300 174 L332 200 L360 160 L292 118 Z"/>
+    <path d="M188 118 C196 84 214 70 240 70 C266 70 284 84 292 118"/>
+    <path d="M206 116 C212 96 224 86 240 86 C256 86 268 96 274 116"/>
+    <path d="M184 226 H296 L284 280 H196 Z"/>
+  </g>
+  <g stroke="#FCAC45" stroke-width="3" stroke-linecap="round">
+    <path d="M228 116 V150"/>
+    <path d="M252 116 V150"/>
+  </g>
+  <g fill="#FCAC45"><circle cx="228" cy="152" r="3.4"/><circle cx="252" cy="152" r="3.4"/></g>
+</svg>

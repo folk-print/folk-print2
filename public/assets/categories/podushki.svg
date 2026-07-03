@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none" role="img" aria-label="Подушки">
+  <rect width="480" height="360" fill="#F6F3EC"/>
+  <g stroke="#111110" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="148" y="120" width="184" height="184" rx="28" fill="#ECE6DA"/>
+    <rect x="166" y="138" width="148" height="148" rx="16" fill="none" stroke-dasharray="2 9"/>
+    <path d="M150 124 L137 111"/>
+    <path d="M330 124 L343 111"/>
+    <path d="M150 300 L137 313"/>
+    <path d="M330 300 L343 313"/>
+    <path d="M240 220 L232 238"/>
+    <path d="M240 220 L248 238"/>
+  </g>
+  <circle cx="240" cy="212" r="7" fill="#FCAC45"/>
+</svg>

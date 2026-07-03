@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folk Print — &lt;folk-designer&gt; embed demo</title>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; background: #f5f4f2; }
+      header { padding: 14px 22px; border-bottom: 1px solid #e7e5e1; }
+      header h1 { margin: 0; font-size: 16px; }
+      header p { margin: 4px 0 0; color: #6f6b78; font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Embedded &lt;folk-designer&gt; web component</h1>
+      <p>Self-contained, client-side. Built from <code>npm run build:wc</code>. Serve this file next to
+        <code>dist-wc/folk-designer.js</code> and <code>models/tshirt.glb</code>.</p>
+    </header>
+
+    <folk-designer lang="uz" model="public/models/tshirt.glb"></folk-designer>
+
+    <script type="module" src="./dist-wc/folk-designer.js"></script>
+  </body>
+</html>

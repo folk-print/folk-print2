@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="720" viewBox="0 0 600 720">
+  <!--
+    Placeholder garment mockup for Folk Print, Module 1.
+    Swap this file (or the config `mockupSrc`) for a real product photo later.
+    The printable area is defined separately in src/config/products.js.
+  -->
+  <g fill="#ECECEF" stroke="#CFCFD6" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 235 92
+             C 262 126 338 126 365 92
+             L 418 112
+             L 558 198
+             Q 566 206 559 215
+             L 498 298
+             L 452 270
+             L 430 262
+             L 442 652
+             L 158 652
+             L 170 262
+             L 148 270
+             L 102 298
+             L 41 215
+             Q 34 206 42 198
+             L 182 112
+             L 235 92 Z" />
+  </g>
+  <!-- collar accent -->
+  <path d="M 248 100 C 268 128 332 128 352 100"
+        fill="none" stroke="#CFCFD6" stroke-width="3" stroke-linecap="round" />
+</svg>

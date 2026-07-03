@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none" role="img" aria-label="Канцтовары">
+  <rect width="480" height="360" fill="#F6F3EC"/>
+  <g stroke="#111110" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="166" y="104" width="160" height="192" rx="8" fill="#ECE6DA"/>
+    <path d="M196 104 V296"/>
+    <path d="M214 152 H300"/>
+    <path d="M214 188 H300"/>
+    <path d="M214 224 H300"/>
+  </g>
+  <path d="M300 140 L356 232" stroke="#FCAC45" stroke-width="9" stroke-linecap="round"/>
+  <path d="M356 232 L367 253 L344 247 Z" fill="#111110"/>
+</svg>

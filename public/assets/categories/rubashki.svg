@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none" role="img" aria-label="Рубашки">
+  <rect width="480" height="360" fill="#F6F3EC"/>
+  <g stroke="#111110" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#ECE6DA" d="M184 116 L120 158 L146 196 L178 170 L174 290 L306 290 L302 170 L334 196 L360 158 L296 116 Z"/>
+    <path d="M206 120 L240 150 L274 120"/>
+    <path d="M206 120 L188 98 L226 110"/>
+    <path d="M274 120 L292 98 L254 110"/>
+    <path d="M240 150 V288"/>
+  </g>
+  <g fill="#FCAC45">
+    <circle cx="240" cy="180" r="4.2"/>
+    <circle cx="240" cy="214" r="4.2"/>
+    <circle cx="240" cy="248" r="4.2"/>
+  </g>
+</svg>

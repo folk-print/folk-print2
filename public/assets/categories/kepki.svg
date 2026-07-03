@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none" role="img" aria-label="Кепки">
+  <rect width="480" height="360" fill="#F6F3EC"/>
+  <g stroke="#111110" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#ECE6DA" d="M150 214 C150 138 206 108 262 108 C320 108 356 150 358 210 C300 230 210 230 150 214 Z"/>
+    <path fill="#ECE6DA" d="M356 206 C402 202 436 214 440 228 C440 236 388 234 356 224 C352 218 352 212 356 206 Z"/>
+    <path d="M262 110 C250 150 248 182 256 208"/>
+  </g>
+  <circle cx="262" cy="108" r="6" fill="#FCAC45"/>
+</svg>

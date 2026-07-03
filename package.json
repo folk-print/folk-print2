@@ -1,34 +1,26 @@
 {
-  "name": "folkprint",
-  "version": "0.1.0",
+  "name": "folk-print",
   "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Folk Print — live custom-print clothing designer (Module 1: t-shirts)",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vite",
+    "build": "vite build && node scripts/seo-shells.mjs",
+    "build:wc": "vite build --config vite.wc.config.js",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
-    "aos": "^3.0.0-beta.6",
-    "bootstrap": "^5.2.0",
-    "lucide-react": "^0.487.0",
-    "mdb-react-ui-kit": "^4.2.0",
-    "next": "12.2.5",
-    "normalize.css": "^8.0.1",
-    "react": "18.2.0",
-    "react-bootstrap": "^2.5.0",
-    "react-countup": "^6.3.1",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.4.0",
-    "sass": "^1.54.9",
-    "swiper": "^8.4.2"
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "fabric": "^6.4.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.0",
+    "three": "^0.169.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.8",
-    "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.10"
   }
 }

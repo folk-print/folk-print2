@@ -1,34 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Folk Print — Per-Part T-Shirt Designer
 
-## Getting Started
+A browser-based custom-clothing designer. Customers design each **garment piece**
+(Front, Back, Left sleeve, Right sleeve) on its own clean rectangular tile; the app
+**warps every tile onto the matching part of a 3D shirt** (triangle-accurate UV
+mapping) and previews it live. Fully client-side — no backend.
 
-First, run the development server:
+Available two ways: a normal Vite single-page app, and a **detachable
+`<folk-designer>` web component** you can drop onto any page.
+
+## Run it (SPA)
 
 ```bash
-npm run dev
-# or
-yarn dev
+cd folk-print
+npm install
+npm run dev      # open the printed local URL (default http://localhost:5173)
+npm run build    # static SPA → dist/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build the web component
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+npm run build:wc            # → dist-wc/folk-designer.js  (single self-contained file)
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Then drop it on any page (everything — React, three.js, Fabric, CSS — is bundled
+and isolated in a shadow root):
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```html
+<script type="module" src="folk-designer.js"></script>
+<folk-designer lang="en" model="/models/tshirt.glb"></folk-designer>
+```
 
-## Learn More
+- `lang` — `en` | `uz` | `ru` (optional; auto-detects from the browser / saved
+  choice when omitted).
+- `model` — URL of a UV-mapped `.glb` (optional; falls back to the bundled config).
 
-To learn more about Next.js, take a look at the following resources:
+`wc-demo.html` is a ready-made embed example (serve it next to `dist-wc/` and the
+model). The component is self-contained and runs entirely on the client.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What it does
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **One roamable design board** — a single canvas laying out all four garment
+  zones (Front / Back / Left sleeve / Right sleeve) as clean rectangles, each
+  showing its piece silhouette. A **navigator** (All / Front / Back / sleeves)
+  zooms into a zone to focus, or "All" to roam the whole layout.
+- **Upload & arrange** — PNG/JPG/WEBP/GIF/SVG; drag prints anywhere across the
+  board, move / scale / rotate / layer / opacity. A print belongs to whichever
+  zone it sits over.
+- **Triangle-accurate mapping** — each zone's rectangle is warped onto the real
+  garment UV islands, so a Front print appears on the chest, a Back print on the
+  back, sleeve prints on the sleeves.
+- **Shirt colour** — swatches + custom picker (the fabric colour shows wherever a
+  tile is empty).
+- **Live 3D** — the shirt sits side by side with the tiles and updates in real
+  time; orbit and zoom. Only the *changed* piece is re-warped each frame.
+- **Languages** — full UI in **English / Oʻzbekcha / Русский** with a switcher.
+- **Export** — `Artwork (PNG)` = the composited garment texture; `3D snapshot`
+  (PNG); `Export spec (JSON)` = per-piece placements + shirt colour.
 
-## Deploy on Vercel
+## How it's built
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **React + Vite + Fabric.js** for the per-part tile editors; **Three.js / R3F /
+  drei** for the 3D preview (lazy-loaded into its own chunk).
+- `src/lib/garment.js` — classifies the model's UV vertices into Front / Back /
+  sleeve islands (union-find + 3D-centroid heuristic) and emits per-part triangle
+  lists, bounding boxes and silhouettes.
+- `src/lib/composite.js` — affine triangle warp: maps each tile triangle onto its
+  UV triangle on a master texture canvas, over a flat shirt-colour base.
+- `src/state/DesignerContext.jsx` — owns one Fabric canvas per part, a dirty-set of
+  pieces to re-warp, and the export hooks.
+- `src/components/Editor3D.jsx` — shirt mesh whose `material.map` is a
+  `CanvasTexture` of the composited master texture (`flipY = false`); incremental
+  recomposite in `useFrame`.
+- `src/i18n/` — string tables (`strings.js`) + provider (`I18nContext.jsx`).
+- `src/webcomponent.jsx` + `vite.wc.config.js` — the `<folk-designer>` custom
+  element and its single-file build.
+- `src/config/runtime.js` — runtime overrides (e.g. the `model` attribute) applied
+  before mount without a rebuild.
+- Model: `public/models/tshirt.glb` (CC0, UV-mapped).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Swapping the model
+
+Drop a UV-mapped `.glb` in `public/models/` and set `model3d.src` + `camera` in
+`src/config/products.js` (SPA), or pass the `model` attribute (web component). The
+part classifier expects a conventional unwrap (front +Z, back −Z, sleeves out to
+the sides); very different unwraps may need the thresholds in `garment.js` tuned.
+
+## Next steps
+
+- Ordering / checkout is a future module (needs a backend + payment provider).
+- The part classifier's thresholds are heuristic; a model with labelled UV groups
+  could replace them for exactness.

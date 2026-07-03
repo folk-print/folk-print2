@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none" role="img" aria-label="Шопперы">
+  <rect width="480" height="360" fill="#F6F3EC"/>
+  <g stroke="#111110" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#ECE6DA" d="M158 150 L150 296 H330 L322 150 Z"/>
+    <path d="M192 150 C192 104 224 104 224 150"/>
+    <path d="M256 150 C256 104 288 104 288 150"/>
+  </g>
+  <rect x="212" y="206" width="56" height="36" rx="4" stroke="#FCAC45" stroke-width="2.5" fill="none"/>
+</svg>

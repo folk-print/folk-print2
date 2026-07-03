@@ -1,0 +1,21 @@
+# maket-builder — Vite static SPA (t-shirt 3D mockup designer).
+# Isolated stack on host port 8101 (sibling to folkprint:8100).
+name: maket-builder
+
+services:
+  web:
+    build:
+      context: .
+    image: maket-builder-web
+    container_name: maket-builder-web
+    restart: unless-stopped
+    ports:
+      - "8101:8080"          # host:container — nginx listens on 8080 inside
+    extra_hosts:
+      - "hostgw:host-gateway"  # lets nginx reach the leadbot (sibling stack) on the host
+    mem_limit: 256m
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/biznesu", "destination": "/", "permanent": true },
+    { "source": "/shop", "destination": "/lichnoe", "permanent": true },
+    { "source": "/links", "destination": "/#contacts", "permanent": true },
+    { "source": "/studio", "destination": "https://folkprint-studio.cassist.uz/studio", "permanent": false },
+    { "source": "/uz/studio", "destination": "https://folkprint-studio.cassist.uz/uz/studio", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/lead", "destination": "http://167.233.74.104:8101/api/lead" },
+    { "source": "/api/order", "destination": "http://167.233.74.104:8101/api/order" },
+    { "source": "/lichnoe", "destination": "/index.html" },
+    { "source": "/uz/lichnoe", "destination": "/index.html" },
+    { "source": "/uz", "destination": "/index.html" }
+  ]
+}

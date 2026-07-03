@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="720" viewBox="0 0 600 720">
+  <!--
+    Placeholder garment mockup (BACK) for Folk Print, Module 1.
+    Same body as the front; back-style collar + a subtle centre seam so the user
+    can tell the two sides apart. Swap for a real product photo later.
+  -->
+  <g fill="#ECECEF" stroke="#CFCFD6" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 235 92
+             C 262 126 338 126 365 92
+             L 418 112
+             L 558 198
+             Q 566 206 559 215
+             L 498 298
+             L 452 270
+             L 430 262
+             L 442 652
+             L 158 652
+             L 170 262
+             L 148 270
+             L 102 298
+             L 41 215
+             Q 34 206 42 198
+             L 182 112
+             L 235 92 Z" />
+  </g>
+  <!-- back neckline (higher / flatter than the front) -->
+  <path d="M 250 96 C 272 112 328 112 350 96"
+        fill="none" stroke="#C4C4CC" stroke-width="6" stroke-linecap="round" />
+  <!-- subtle centre seam -->
+  <path d="M 300 116 L 300 646" fill="none" stroke="#DEDEE3" stroke-width="2" />
+</svg>
