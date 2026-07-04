@@ -735,13 +735,13 @@ export default function B2B() {
               {/* workwear — sp2 */}
               <a href="#zayavka" className="b2b-card-hover sp2" style={{ '--d': '140ms', minWidth: 0, background: '#fff', border: '1px solid #E7DECF', borderRadius: '18px', overflow: 'hidden', textDecoration: 'none', color: '#15120D', display: 'flex', flexDirection: 'column', transition: 'transform .2s, box-shadow .2s' }}>
                 <div style={{ position: 'relative', aspectRatio: '4 / 3', background: '#EBE2D2' }}>
-                  <Slot src="/photos/specodezhda.jpg" label={t.catalogSlotWorkwear} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />                </div>
+                  <Slot src="/photos/specodezhda-set.jpg" label={t.catalogSlotWorkwear} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />                </div>
                 <div style={{ padding: '16px' }}><h3 style={{ fontFamily: "'Oswald'", fontWeight: 600, textTransform: 'uppercase', fontSize: '20px', margin: '0 0 4px' }}>{t.catalogWorkwearTitle}</h3><p style={{ margin: 0, color: '#857B69', fontSize: '13px', lineHeight: 1.4 }}>{t.catalogWorkwearDesc}</p></div>
               </a>
               {/* gifts — sp2 */}
               <a href="#zayavka" className="b2b-card-hover sp2" style={{ '--d': '210ms', minWidth: 0, background: '#fff', border: '1px solid #E7DECF', borderRadius: '18px', overflow: 'hidden', textDecoration: 'none', color: '#15120D', display: 'flex', flexDirection: 'column', transition: 'transform .2s, box-shadow .2s' }}>
                 <div style={{ position: 'relative', aspectRatio: '4 / 3', background: '#EBE2D2' }}>
-                  <Slot src="/photos/podarki.jpg" label={t.catalogSlotGifts} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />                </div>
+                  <Slot src="/photos/podarki-box.jpg" label={t.catalogSlotGifts} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />                </div>
                 <div style={{ padding: '16px' }}><h3 style={{ fontFamily: "'Oswald'", fontWeight: 600, textTransform: 'uppercase', fontSize: '20px', margin: '0 0 4px' }}>{t.catalogGiftsTitle}</h3><p style={{ margin: 0, color: '#857B69', fontSize: '13px', lineHeight: 1.4 }}>{t.catalogGiftsDesc}</p></div>
               </a>
               {/* merch — sp2 */}

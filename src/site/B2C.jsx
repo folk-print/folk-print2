@@ -479,7 +479,7 @@ export default function B2C() {
           .b2c-fab-phone.show{transform:translateY(0) scale(1);opacity:1}
           .b2c-fab-phone::after{content:'';position:absolute;inset:0;border-radius:999px;border:2px solid rgba(252,172,69,.7);animation:fabPing 2s ease-out infinite;pointer-events:none}
         }
-        .btn-outline-dark:hover{background:#FCAC45;border-color:#FCAC45;color:#15120D}
+        .btn-outline-dark:hover{background:#15120D;color:#F5EFE5}
         .card-lift:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(21,18,13,.10)}
         .price-outline:hover{background:#15120D;color:#F5EFE5 !important}
         .price-amber:hover{background:#F0951F}
@@ -606,7 +606,7 @@ export default function B2C() {
                 </div>
               </a>
               <a href="#zayavka" className="card-lift" style={{ '--d': '140ms', background: '#fff', border: '1px solid #E7DECF', borderRadius: '18px', overflow: 'hidden', textDecoration: 'none', color: '#15120D', display: 'flex', flexDirection: 'column', transition: 'transform .2s, box-shadow .2s' }}>
-                <div style={{ position: 'relative', aspectRatio: '4/5', background: '#EBE2D2' }}><Slot src="/photos/occ-ownidea.jpg" label={t.occasionOwnIdeaSlot} radius={0} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} /></div>
+                <div style={{ position: 'relative', aspectRatio: '4/5', background: '#EBE2D2' }}><Slot src="/photos/occ-ownidea-model.jpg" label={t.occasionOwnIdeaSlot} radius={0} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} /></div>
                 <div style={{ padding: '16px 16px 18px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '10px' }}><h3 style={{ fontFamily: "'Oswald'", fontWeight: 600, textTransform: 'uppercase', fontSize: '21px', margin: 0, lineHeight: 1 }}>{t.occasionOwnIdeaTitle}</h3><span style={{ flex: 'none', width: '36px', height: '36px', borderRadius: '999px', background: '#FCAC45', color: '#15120D', display: 'grid', placeItems: 'center', fontSize: '17px' }}>→</span></div>
                   <p style={{ margin: 0, color: '#857B69', fontSize: '14px', lineHeight: 1.4 }}>{t.occasionOwnIdeaDesc}</p>
