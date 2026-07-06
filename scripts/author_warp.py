@@ -77,8 +77,8 @@ def build(side):
     u = np.clip((X - cxs[:, None]) / torso[:, None], -1, 1)
     gate = smoothstep(0.12 * CH, 0.22 * CH, Y)
     cyl = (np.arcsin(u) * (2 / np.pi) - u)
-    dx += cyl * torso[:, None] * 0.72 * gate
-    dx += np.sign(u) * (u ** 4) * 12.0 * gate                # accelerate the wrap right at the side
+    dx += cyl * torso[:, None] * 0.42 * gate
+    dx += np.sign(u) * (u ** 4) * 4.0 * gate                 # gentle extra wrap right at the side (not too much)
     shade *= np.clip(1 - 0.20 * np.clip(np.abs(u) - 0.55, 0, 1) / 0.45, 0.80, 1.0)
 
     # (B) COLLAR / NECKLINE — detect the top garment edge per column, smooth it into a
@@ -94,8 +94,8 @@ def build(side):
     band = np.clip(1 - dist / 135.0, 0, 1)
     band[dist < 0] = 0
     slope = np.gradient(top)
-    dy += band * 14.0
-    dx += band * slope[None, :] * 0.8
+    dy += band * 10.0
+    dx += band * slope[None, :] * 0.6
     shade *= np.clip(1 - 0.10 * band, 0.90, 1.0)
 
     # (C) PHOTO WRINKLES — luminance high-pass; push print edges along real fold gradients

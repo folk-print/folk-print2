@@ -135,17 +135,6 @@
       </div>
 
 
-      <!-- ===== SLOGAN (olive) ===== -->
-      <section id="fpEggHost" class="s6" style="background:#E7EAD3; border:1px solid #D7DCBE; border-radius:18px; padding:26px 28px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; animation:tlUp .7s .48s both;">
-        <span style="position:absolute; right:18px; top:14px; font-size:30px; color:#B9C089;">✺</span>
-        <div style="font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:.12em; font-size:11.5px; color:#7C8552;">с 2014 года</div>
-        <div style="font-family:'Caveat',cursive; font-weight:700; font-size:42px; line-height:.96; color:#15120D; margin-top:8px;">Твоя идея —<br>наша печать.</div>
-        <div style="display:flex; align-items:center; gap:9px; margin-top:16px;">
-          <button id="fpEgg" type="button" aria-label="Folk Print" style="border:0;background:none;padding:0;margin:0;cursor:pointer;line-height:0;display:inline-flex;-webkit-tap-highlight-color:transparent;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#FCAC45"/><circle cx="17" cy="20" r="2.6" fill="#15120D"/><circle cx="31" cy="20" r="2.6" fill="#15120D"/><path d="M15 28 C19 34 29 34 33 28" stroke="#15120D" stroke-width="3" stroke-linecap="round"/></svg></button>
-          <span style="font-weight:700; font-size:13px; color:#5F6B38;">Folk Print · Ташкент</span>
-        </div>
-      </section>
-
       <!-- ===== LOCATION (wide) ===== -->
       <section class="s6" style="background:#fff; border:1px solid #E7DECF; border-radius:20px; overflow:hidden; animation:tlUp .7s .54s both;">
         <div class="tld-loc" style="display:grid; grid-template-columns:1fr 1fr;">
@@ -173,26 +162,5 @@
     </div>
   </div>
 </div>
-<script>
-(function(){
-  var btn=document.getElementById('fpEgg'), host=document.getElementById('fpEggHost');
-  if(!btn||!host) return;
-  var EM=['🎨','👕','✨','🧵','🖨️','💛','🧢','🔥'];
-  btn.addEventListener('click',function(){
-    try{btn.animate([{transform:'scale(1)'},{transform:'scale(1.35) rotate(-12deg)'},{transform:'scale(1)'}],{duration:420,easing:'cubic-bezier(.34,1.56,.64,1)'});}catch(e){}
-    var hr=host.getBoundingClientRect(), br=btn.getBoundingClientRect();
-    var ox=br.left-hr.left+br.width/2, oy=br.top-hr.top+br.height/2;
-    for(var i=0;i<9;i++){(function(){
-      var s=document.createElement('span');
-      s.textContent=EM[Math.floor(Math.random()*EM.length)];
-      var dx=(Math.random()*2-1)*70, dy=-55-Math.random()*120, rot=(Math.random()*2-1)*80;
-      s.style.cssText='position:absolute;left:'+ox+'px;top:'+oy+'px;font-size:'+(15+Math.random()*13)+'px;pointer-events:none;z-index:5;will-change:transform,opacity;';
-      host.appendChild(s);
-      var a=s.animate([{transform:'translate(-50%,-50%) rotate(0deg)',opacity:1},{transform:'translate(calc(-50% + '+dx+'px),calc(-50% + '+dy+'px)) rotate('+rot+'deg)',opacity:0}],{duration:950+Math.random()*550,easing:'cubic-bezier(.22,.61,.36,1)'});
-      a.onfinish=function(){s.remove();};
-    })();}
-  });
-})();
-</script>
 </body>
 </html>
